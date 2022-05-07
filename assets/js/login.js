@@ -48,7 +48,7 @@ $(function() {
                 layer.msg('登录成功！');
                 // console.log(res.token);
                 localStorage.setItem('token', res.token);
-                location.href = '/04-阶段四 前后端交互/3 大事件后台管理系统项目/index.html';
+                location.href = './index.html';
             }
         })
     })
