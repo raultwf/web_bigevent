@@ -22,7 +22,7 @@ function getUserInfo() {
             if (res.status != 0) {
                 return layui.layer.msg('获取用户信息失败！');
             }
-            renderAvater(res.data);
+            renderAvatar(res.data);
         },
         // complete: function(res) {
         //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
@@ -33,16 +33,17 @@ function getUserInfo() {
     })
 }
 
-function renderAvater(user) {
+function renderAvatar(user) {
     var uname = user.nickname || user.username;
+    console.log(user.nickname, user.username);
     $('#welcome').html('欢迎&nbsp;&nbsp;' + uname);
     if (user.user_pic !== null) {
         $('.layui-nav-img').attr('src', user.user_pic).show();
-        $('text-avater').hide();
+        $('.text-avatar').hide();
     } else {
         $('.layui-nav-img').hide();
         var first = uname[0].toUpperCase();
-        $('text-avater').html(first).show();
+        $('.text-avatar').html(first).show();
     }
 
 }
